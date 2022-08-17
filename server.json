@@ -61,8 +61,16 @@
       "category": "Alimentação",
       "price": 50,
       "type": "outcome",
-      "createdAt": "2022-08-17T15:20:10.102Z",
+      "createdAt": "2022-08-17T18:04:38.789Z",
       "id": 8
+    },
+    {
+      "description": "Salário Solarview",
+      "category": "Pagamento",
+      "price": 3700,
+      "type": "income",
+      "createdAt": "2022-08-17T18:05:11.117Z",
+      "id": 9
     }
   ]
 }

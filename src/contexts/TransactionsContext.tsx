@@ -21,8 +21,10 @@ interface CreateTransactionInput {
 interface TransactionContextType {
   transactions: Transaction[]
   isLoading: boolean
+  open: boolean
   fetchTransactions: (query?: string) => Promise<void>
   createTransaction: (data: CreateTransactionInput) => Promise<void>
+  closedModal: (status: boolean) => void
 }
 
 interface TransactionsProviderProps {
@@ -33,6 +35,7 @@ export const TransactionsContext = createContext({} as TransactionContextType)
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [isLoading, setIsLoading] = useState(false)
+  const [open, setOpen] = useState(false)
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
   async function fetchTransactions(query?: string) {
@@ -56,6 +59,10 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     }
   }
 
+  function closedModal(status: boolean) {
+    setOpen(status)
+  }
+
   async function createTransaction(data: CreateTransactionInput) {
     const { description, category, price, type } = data
 
@@ -76,7 +83,14 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
 
   return (
     <TransactionsContext.Provider
-      value={{ transactions, fetchTransactions, isLoading, createTransaction }}
+      value={{
+        transactions,
+        fetchTransactions,
+        isLoading,
+        createTransaction,
+        open,
+        closedModal,
+      }}
     >
       {children}
     </TransactionsContext.Provider>
