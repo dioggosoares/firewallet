@@ -1,0 +1,68 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2022-08-09T21:41:34.870Z"
+    },
+    {
+      "id": 2,
+      "description": "Hambúrguer",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 60,
+      "createdAt": "2022-08-08T14:41:34.870Z"
+    },
+    {
+      "id": 3,
+      "description": "Ignite Rocketseat",
+      "type": "outcome",
+      "category": "Educação",
+      "price": 83,
+      "createdAt": "2022-08-03T10:41:34.870Z"
+    },
+    {
+      "id": 4,
+      "description": "Almoço do dia dos pais",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 250,
+      "createdAt": "2022-08-12T10:00:34.870Z"
+    },
+    {
+      "description": "Freelance BossaBox",
+      "category": "Venda",
+      "price": 15000,
+      "type": "income",
+      "createdAt": "2022-08-14T03:13:04.999Z",
+      "id": 5
+    },
+    {
+      "description": "Pão de queijo",
+      "category": "Alimentação",
+      "price": 5,
+      "type": "outcome",
+      "createdAt": "2022-08-17T12:07:46.093Z",
+      "id": 6
+    },
+    {
+      "description": "Almoço com mozão",
+      "category": "Alimentação",
+      "price": 260,
+      "type": "outcome",
+      "createdAt": "2022-08-17T15:04:13.254Z",
+      "id": 7
+    },
+    {
+      "description": "Pizza",
+      "category": "Alimentação",
+      "price": 50,
+      "type": "outcome",
+      "createdAt": "2022-08-17T15:20:10.102Z",
+      "id": 8
+    }
+  ]
+}
