@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState, useCallback } from 'react'
+import { createContext } from 'use-context-selector'
 
 import { api } from '../lib/api'
 
@@ -38,7 +39,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [open, setOpen] = useState(false)
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
-  async function fetchTransactions(query?: string) {
+  const fetchTransactions = useCallback(async (query?: string) => {
     setIsLoading(true)
 
     try {
@@ -57,29 +58,32 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     } catch (err) {
       setIsLoading(false)
     }
-  }
+  }, [])
+
+  const createTransaction = useCallback(
+    async (data: CreateTransactionInput) => {
+      const { description, category, price, type } = data
+
+      const response = await api.post('transactions', {
+        description,
+        category,
+        price,
+        type,
+        createdAt: new Date(),
+      })
+
+      setTransactions((state) => [response.data, ...state])
+    },
+    [],
+  )
 
   function closedModal(status: boolean) {
     setOpen(status)
   }
 
-  async function createTransaction(data: CreateTransactionInput) {
-    const { description, category, price, type } = data
-
-    const response = await api.post('transactions', {
-      description,
-      category,
-      price,
-      type,
-      createdAt: new Date(),
-    })
-
-    setTransactions((state) => [response.data, ...state])
-  }
-
   useEffect(() => {
     fetchTransactions()
-  }, [])
+  }, [fetchTransactions])
 
   return (
     <TransactionsContext.Provider

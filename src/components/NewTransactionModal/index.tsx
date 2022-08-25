@@ -2,8 +2,9 @@ import { Spinner } from '@chakra-ui/react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Dialog from '@radix-ui/react-dialog'
 import { X, ArrowCircleUp, ArrowCircleDown } from 'phosphor-react'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { useContextSelector } from 'use-context-selector'
 import * as z from 'zod'
 
 import { TransactionsContext } from '../../contexts/TransactionsContext'
@@ -26,8 +27,15 @@ const newTransactionFormSchema = z.object({
 type newTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionModal() {
-  const { createTransaction, closedModal } = useContext(TransactionsContext)
-  const [isCloseModal, setIsCloseModal] = useState(true)
+  const createTransaction = useContextSelector(
+    TransactionsContext,
+    (context) => {
+      return context.createTransaction
+    },
+  )
+  const closedModal = useContextSelector(TransactionsContext, (context) => {
+    return context.closedModal
+  })
 
   const {
     control,

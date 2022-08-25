@@ -41,36 +41,20 @@
       "id": 5
     },
     {
-      "description": "Pão de queijo",
-      "category": "Alimentação",
-      "price": 5,
-      "type": "outcome",
-      "createdAt": "2022-08-17T12:07:46.093Z",
-      "id": 6
-    },
-    {
-      "description": "Almoço com mozão",
-      "category": "Alimentação",
-      "price": 260,
-      "type": "outcome",
-      "createdAt": "2022-08-17T15:04:13.254Z",
-      "id": 7
-    },
-    {
-      "description": "Pizza",
-      "category": "Alimentação",
-      "price": 50,
-      "type": "outcome",
-      "createdAt": "2022-08-17T18:04:38.789Z",
-      "id": 8
-    },
-    {
       "description": "Salário Solarview",
       "category": "Pagamento",
       "price": 3700,
       "type": "income",
       "createdAt": "2022-08-17T18:05:11.117Z",
-      "id": 9
+      "id": 6
+    },
+    {
+      "description": "Pizza",
+      "category": "Alimentação",
+      "price": 85,
+      "type": "outcome",
+      "createdAt": "2022-08-25T18:00:18.000Z",
+      "id": 7
     }
   ]
 }

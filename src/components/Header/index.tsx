@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContextSelector } from 'use-context-selector'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { HeaderContainer, HeaderContent, NewTransactionButton } from './styles'
@@ -8,7 +8,12 @@ import { NewTransactionModal } from '../NewTransactionModal'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
 
 export function Header() {
-  const { open, closedModal } = useContext(TransactionsContext)
+  const open = useContextSelector(TransactionsContext, (context) => {
+    return context.open
+  })
+  const closedModal = useContextSelector(TransactionsContext, (context) => {
+    return context.closedModal
+  })
 
   return (
     <HeaderContainer>

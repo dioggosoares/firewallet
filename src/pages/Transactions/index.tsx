@@ -1,5 +1,5 @@
 import { Spinner } from '@chakra-ui/react'
-import { useContext } from 'react'
+import { useContextSelector } from 'use-context-selector'
 import { Header } from '../../components/Header'
 import { SearchForm } from '../../components/SearchForm'
 import { Summary } from '../../components/Summary'
@@ -21,7 +21,12 @@ interface Transaction {
 }
 
 export function Transactions() {
-  const { transactions, isLoading } = useContext(TransactionsContext)
+  const transactions = useContextSelector(TransactionsContext, (context) => {
+    return context.transactions
+  })
+  const isLoading = useContextSelector(TransactionsContext, (context) => {
+    return context.isLoading
+  })
 
   return (
     <div>
