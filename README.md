@@ -14,9 +14,9 @@ Projeto de plataforma de controle de finanças feito com ReactJS, ViteJs, Chakra
 
 ## 📷 Screenshots
 
-<img src="public/media/mockups/print2-Firewallet.png" alt="cadastro" />
+<img src="public/media/print2-Firewallet.png" alt="cadastro" />
 
-<img src="public/media/mockups/print1-Firewallet.png" alt="busca" />
+<img src="public/media/print1-Firewallet.png" alt="busca" />
 
 ## 🦾 Sobre mim
 
