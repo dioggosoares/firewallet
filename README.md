@@ -5,7 +5,7 @@
 
 ## 📄 Descrição
 
-Projeto desenvolvido com intuito de criar uma aplicação de controle de gastos pessoais, feito com ReactJS, ViteJs, ChakraUI, StyledComponents e JSON-Server
+Projeto desenvolvido com intuito de criar uma aplicação de controle de gastos pessoais, feito com ReactJS, ViteJs, ChakraUI, StyledComponents, Radix-UI e JSON-Server
 
 ## 🛠 Technologies
 
